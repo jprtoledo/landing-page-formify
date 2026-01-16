@@ -1,9 +1,9 @@
-FROM node:20-alpine AS base
+FROM node:24-alpine AS base
 
 FROM base AS deps
 WORKDIR /app
 COPY package*.json ./
-RUN npm ci
+RUN npm i
 
 FROM base AS builder
 WORKDIR /app
