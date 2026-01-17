@@ -69,7 +69,7 @@ export default function Pricing() {
   };
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 py-16" id="plans">
+    <div className="w-full max-w-7xl mx-auto px-4 py-16" id="planos">
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold mb-4">Escolha seu plano</h2>
         <p className="text-muted-foreground text-lg mb-8">
