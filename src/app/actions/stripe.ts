@@ -1,8 +1,10 @@
 'use server'
 
 import { stripe } from '@/lib/stripe'
+import {headers} from "next/headers";
 
 export async function fetchClientSecret(priceId: string, userEmail?: string) {
+    const origin = (await headers()).get('origin')
     const session = await stripe.checkout.sessions.create({
         ui_mode: 'embedded',
         line_items: [
@@ -12,7 +14,7 @@ export async function fetchClientSecret(priceId: string, userEmail?: string) {
             }
         ],
         mode: 'subscription',
-        redirect_on_completion: 'never',
+        return_url: `${origin}/return?session_id={CHECKOUT_SESSION_ID}`,
         ...(userEmail ? {customer_email: userEmail} : {})
     })
 
