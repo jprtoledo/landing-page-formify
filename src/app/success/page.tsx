@@ -2,6 +2,7 @@
 
 import {useEffect, useState} from "react";
 import { useRouter } from 'next/navigation';
+import env from "@/config/env";
 
 export default function Success() {
     const router = useRouter()
@@ -13,7 +14,7 @@ export default function Success() {
         const urlParams = new URLSearchParams(queryString);
         const sessionId = urlParams.get('session_id');
 
-        fetch(`/sessionStatus?sessionId=${sessionId}`)
+        fetch(`${env.API_URL}/api/payment/sessionStatus?sessionId=${sessionId}`)
             .then((res) => res.json())
             .then((data) => {
                 setStatus(data.status);
