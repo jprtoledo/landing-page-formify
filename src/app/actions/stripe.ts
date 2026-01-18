@@ -12,6 +12,7 @@ export async function fetchClientSecret(priceId: string, userEmail?: string) {
             }
         ],
         mode: 'subscription',
+        redirect_on_completion: 'never',
         ...(userEmail ? {customer_email: userEmail} : {})
     })
 
