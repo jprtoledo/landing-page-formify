@@ -27,8 +27,7 @@ export default function Success() {
                 <div className="flex flex-col items-center">
                     <p className="pt-4 text-md font-bold text-foreground">Parabéns pela sua assinatura!</p>
                     <p className="pt-4 text-sm text-muted-foreground">Um email com mais informações será enviado
-                        para {' '}
-                        <a className="font-bold" href={`mailto:${customerEmail}`}>{customerEmail}</a>
+                        para <strong className="font-bold">{customerEmail}</strong>
                     </p>
                     <img src={'/img/logo_light.png'} alt="Logo Formify" width={200}/>
                 </div>
