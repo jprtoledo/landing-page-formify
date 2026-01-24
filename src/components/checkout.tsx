@@ -18,15 +18,13 @@ export default function Checkout({priceId}: { priceId: string }) {
     }, [priceId])
 
     return (
-        <div className="px-2 pb-2">
-            <div id="checkout">
-                <EmbeddedCheckoutProvider
-                    stripe={stripePromise}
-                    options={{clientSecret}}
-                >
-                    <EmbeddedCheckout/>
-                </EmbeddedCheckoutProvider>
-            </div>
+        <div id="checkout" className="p-2 lg:py-8">
+            <EmbeddedCheckoutProvider
+                stripe={stripePromise}
+                options={{clientSecret}}
+            >
+                <EmbeddedCheckout/>
+            </EmbeddedCheckoutProvider>
         </div>
     )
 }
